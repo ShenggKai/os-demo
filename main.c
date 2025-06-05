@@ -115,8 +115,8 @@ void consumer_process(SharedQueue *sq)
 
     if (n_consume > sq->count)
     {
-        printf("Consumer: Requested (%d) exceeds available (%d). Consuming all available items.\n", n_consume, sq->count);
-        n_consume = sq->count;
+        printf("Consumer: Requested (%d) exceeds available (%d).\n", n_consume, sq->count);
+        return;
     }
 
     printf("Consumer: Consuming %d items from the end of the queue...\n", n_consume);
